@@ -1,15 +1,16 @@
 #colorfight-logo {
 	display: inline-block;
-	width: 322px;
-	min-width: 322px;
-	height: 70px;
-	min-height: 70px;
+	width: 276px;
+	min-width: 276px;
+	height: 60px;
+	min-height: 60px;
+	font-size: 0px;
 }
 
 .logo-pixel {
 	display: inline-block;
-	width: 7px;
-	height: 7px;
+	width: 6px;
+	height: 6px;
 	float: left;
 	background-color: transparent;
 }
