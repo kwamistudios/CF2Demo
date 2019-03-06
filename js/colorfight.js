@@ -18,7 +18,8 @@ var gameColumn = document.getElementById( "cf-game-col" ),
 	gameCtx = gameCanvas.getContext( "2d" );
 
 /* WEBSOCKET VARIABLES */
-var gameSocket = new WebSocket( "ws://colorfightii.herokuapp.com/game_channel" ),
+var gameProtocol = window.location.protocol=='https:'&&'wss://'||'ws://',
+	gameSocket = new WebSocket( gameProtocol + "colorfightii.herokuapp.com/game_channel" ),
 	gameData = false;
 
 /* Rendering the logo */
