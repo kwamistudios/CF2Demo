@@ -57,6 +57,7 @@ function draw_game( ts ) {
 	requestAnimationFrame( draw_game );
 }
 
+/* Drawing the rounded cell */
 function draw_cell( x, y, cw, ch, cr ) {
 	gameCtx.beginPath();
 	gameCtx.moveTo( x, y + cr );
