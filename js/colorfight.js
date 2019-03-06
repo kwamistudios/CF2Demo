@@ -8,7 +8,8 @@ var animationStartTime = false,
 	gameWidth,
 	cellWidth,
 	cellHeight,
-	cellRadius;
+	cellRadius,
+	currentCell;
 
 /* DOM VARIABLES */
 var gameColumn = document.getElementById( "cf-game-col" ),
@@ -52,10 +53,11 @@ function draw_game( ts ) {
 		gameCtx.lineWidth = 2;
 		for( var y = 0; y < 30; y++ ) {
 			for( var x = 0; x < 30; x++ ) {
-				gameCtx.strokeStyle = "#65c9cf";
+				currentCell = gameData[ "game_map" ][ y ][ x ];
+				gameCtx.strokeStyle = combine_color( "#000000", "#65c9cf", currentCell[ "natural_energy" ] / 10 );
 				draw_cell( ( x * ( cellWidth + 4 ) ) + 1, ( y * ( cellHeight + 4 ) ) + 1, cellWidth, cellHeight, cellRadius );
 				gameCtx.stroke();
-				gameCtx.strokeStyle = "#faf334";
+				gameCtx.strokeStyle = combine_color( "#000000", "#faf334", currentCell[ "natural_gold" ] / 10 );
 				draw_cell( ( x * ( cellWidth + 4 ) ) + 3, ( y * ( cellHeight + 4 ) ) + 3, cellWidth - 4, cellHeight - 4, cellRadius - 2 );
 				gameCtx.fill();
 				gameCtx.stroke();
